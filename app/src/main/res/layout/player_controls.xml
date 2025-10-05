@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/playerControlsLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:background="#80121212"
+    android:elevation="8dp"
+    tools:ignore="UseCompoundDrawables">
+
+    <!-- Top Bar: Timer + Status + Title + Favorite -->
+    <LinearLayout
+        android:id="@+id/nowPlayingBar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="8dp">
+
+        <!-- Sleep Timer Button + Timer + Status -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginStart="8dp">
+
+            <ImageButton
+                android:id="@+id/sleepTimerButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:padding="12dp"
+                android:src="@drawable/ic_watch"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/sleep_timer"
+                app:tint="?attr/colorOnSurface" />
+
+            <!-- Countdown Timer -->
+            <TextView
+                android:id="@+id/tvTimer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="00:00"
+                android:textColor="?attr/colorOnSurface"
+                android:visibility="gone"
+                android:textSize="14sp"
+                android:gravity="center_vertical"/>
+
+            <!-- Stream Status -->
+            <TextView
+                android:id="@+id/tvStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Buffering"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="14sp"
+                android:visibility="invisible"
+                android:gravity="center_vertical"/>
+        </LinearLayout>
+
+        <!-- Now Playing Title -->
+        <TextView
+            android:id="@+id/tvNowPlaying"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="Select a station"
+            android:textColor="?attr/colorOnSurface"
+            android:ellipsize="marquee"
+            android:singleLine="true"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:scrollHorizontally="true"
+            android:freezesText="true"
+            android:gravity="center" />
+
+        <!-- Favorite Button -->
+        <ImageButton
+            android:id="@+id/favButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:padding="12dp"
+            android:src="@drawable/ic_heart_outline"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/favorite"
+            app:tint="?attr/colorOnSurface"
+            android:layout_marginEnd="8dp"/>
+    </LinearLayout>
+
+    <!-- Volume Controls -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="8dp">
+
+        <ImageButton
+            android:id="@+id/muteButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_volume_up"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/mute"
+            app:tint="?attr/colorOnSurface"
+            android:layout_marginEnd="8dp"/>
+
+        <SeekBar
+            android:id="@+id/volumeSeekBar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:thumbTint="?attr/colorPrimary"
+            android:progressTint="?attr/colorPrimary" />
+    </LinearLayout>
+
+    <!-- Playback Controls -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="4dp">
+
+        <ImageButton
+            android:id="@+id/prevButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/button_3d_background_selector"
+            android:src="@drawable/ic_skip_previous"
+            android:contentDescription="@string/previous"
+            app:tint="?attr/colorOnSurface"
+            android:layout_marginEnd="16dp"
+            android:stateListAnimator="@animator/button_click_anim"/>
+
+        <ImageButton
+            android:id="@+id/playPauseButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/button_3d_background_selector"
+            android:src="@drawable/ic_play"
+            android:contentDescription="@string/play_pause"
+            app:tint="?attr/colorOnSurface"
+            android:layout_marginHorizontal="16dp"
+            android:stateListAnimator="@animator/button_click_anim"/>
+
+        <ImageButton
+            android:id="@+id/nextButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/button_3d_background_selector"
+            android:src="@drawable/ic_skip_next"
+            android:contentDescription="@string/next"
+            app:tint="?attr/colorOnSurface"
+            android:layout_marginStart="16dp"
+            android:stateListAnimator="@animator/button_click_anim"/>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Pressed state: solid color -->
+    <item android:state_pressed="true">
+        <shape android:shape="oval">
+            <solid android:color="?attr/colorSecondary" />
+        </shape>
+    </item>
+
+    <!-- Default state with gradient -->
+    <item>
+        <layer-list>
+
+            <!-- Outer shadow -->
+            <item android:left="1dp" android:right="1dp" android:top="2dp" android:bottom="0dp">
+                <shape android:shape="oval">
+                    <gradient
+                        android:startColor="#55000000"
+                        android:endColor="#00000000"
+                        android:angle="270"
+                        android:type="linear" />
+                </shape>
+            </item>
+
+            <!-- Inner oval with gradient -->
+            <item android:left="4dp" android:right="4dp" android:top="4dp" android:bottom="4dp">
+                <shape android:shape="oval">
+                    <gradient
+                        android:startColor="#FF2D75"
+                        android:centerColor="#2D5EFF"
+                        android:endColor="#00C9FF"
+                        android:angle="270"
+                        android:type="linear" />
+                </shape>
+            </item>
+
+        </layer-list>
+    </item>
+</selector>

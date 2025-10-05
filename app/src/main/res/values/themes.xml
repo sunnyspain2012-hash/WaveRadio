@@ -1,0 +1,36 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Main App Theme with Material3 Colors -->
+    <style name="Theme.WaveRadio" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Brand Colors -->
+        <item name="colorPrimary">@color/teal_200</item>
+        <item name="colorOnPrimary">@android:color/black</item>
+        <item name="colorSecondary">@color/purple_500</item>
+        <item name="colorOnSecondary">@android:color/white</item>
+
+        <!-- Surfaces -->
+        <item name="colorSurface">@android:color/black</item>
+        <item name="colorOnSurface">@android:color/white</item>
+        <item name="colorSurfaceVariant">@color/gray_800</item>
+        <item name="colorOnSurfaceVariant">@color/gray_200</item>
+
+        <!-- Status bar -->
+        <item name="android:statusBarColor">@android:color/black</item>
+        <item name="android:windowLightStatusBar">false</item>
+
+        <!-- Splash Screen -->
+        <item name="windowSplashScreenBackground">@color/teal_200</item>
+        <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher</item>
+        <item name="windowSplashScreenIconBackgroundColor">@android:color/white</item>
+        <item name="postSplashScreenTheme">@style/Theme.WaveRadio.NoActionBar</item>
+    </style>
+
+    <!-- No ActionBar Theme -->
+    <style name="Theme.WaveRadio.NoActionBar" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:windowFullscreen">false</item>
+    </style>
+
+</resources>
